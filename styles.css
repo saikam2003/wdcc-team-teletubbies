@@ -494,7 +494,12 @@ nav ul li a:hover {
 
 /* Apply fixed background to the body or a wrapper element */
 body {
+<<<<<<< Updated upstream
     background-color: #ffffff;
+=======
+    /* background-color: #ffffff; */
+    background-attachment: fixed; /* Keep the background fixed */
+>>>>>>> Stashed changes
     background-size: cover; /* Scale the background image to cover the entire viewport */
     background-position: center center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
