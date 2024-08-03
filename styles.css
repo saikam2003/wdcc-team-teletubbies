@@ -36,18 +36,21 @@ body {
     justify-content: space-around;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
+    margin-right: 200px;
 }
 
 .home h2 {
     color: white;
     font-size: 3rem;
+    margin-left: 200px;
+    margin-top: 200px;
 }
 
 .searchbar {
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 200px;
 }
 
 .searchbar form {
@@ -208,6 +211,7 @@ nav ul li a:hover {
     flex: 1 1 calc(25% - 20px);
     padding: 20px;
     border-radius: 5px;
+    user-select: none;
 }
 
 /* Items section styling */
@@ -215,6 +219,7 @@ nav ul li a:hover {
     background-color: #fff; /* White background for items */
     padding: 20px;
     border-radius: 5px;
+    margin-left: 200px;
 }
 
 .top {
@@ -273,6 +278,7 @@ nav ul li a:hover {
     background-color: #f4f4f4; /* Light background for features */
     padding: 30px;
     border-radius: 5px;
+    margin-left: 200px;
 }
 
 /* Individual feature item styling */
