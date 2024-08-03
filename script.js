@@ -47,3 +47,98 @@ function addToCart (itemName) {
   alert(itemName + ' has been added to the cart!')
   // You can replace the alert with actual cart functionality
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.card');
+  let currentCardIndex = 0;
+  let startX = 0;
+  let currentX = 0;
+  let isTouching = false;
+
+  function showCard(index) {
+      if (index >= 0 && index < cards.length) {
+          cards.forEach((card, i) => {
+              card.classList.remove('show');
+              if (i === index) {
+                  card.classList.add('show');
+              }
+          });
+      }
+  }
+
+  function startDrag(e) {
+      isTouching = true;
+      startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+      console.log('Drag started at:', startX);
+  }
+
+  function dragCard(e) {
+      if (!isTouching) return;
+
+      currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+      const moveX = currentX - startX;
+
+      console.log('Dragging, moveX:', moveX);
+
+      // Calculate swipe direction and color change
+      const swipeDirection = moveX > 0 ? 'right' : 'left';
+      const swipeDistance = Math.min(Math.abs(moveX), 100); // Limit the distance to 100px for smoother transition
+
+      if (swipeDirection === 'right') {
+          cards[currentCardIndex].style.backgroundColor = `rgba(0, 255, 0, ${swipeDistance / 100})`; // Green
+      } else {
+          cards[currentCardIndex].style.backgroundColor = `rgba(255, 0, 0, ${Math.abs(swipeDistance / 100)})`; // Red
+      }
+
+      cards[currentCardIndex].style.transform = `translateX(${moveX}px) rotate(${moveX * 0.05}deg)`;
+  }
+
+  function endDrag(e) {
+      if (!isTouching) return;
+      isTouching = false;
+
+      const moveX = currentX - startX;
+      const swipeThreshold = 100; // Minimum distance for a valid swipe
+
+      console.log('Drag ended, moveX:', moveX);
+
+      if (Math.abs(moveX) > swipeThreshold) {
+          if (moveX > 0) {
+              // Swipe right
+              console.log('Swiped right');
+              cards[currentCardIndex].style.transform = 'translateX(100%) rotate(20deg)';
+              cards[currentCardIndex].style.backgroundColor = 'rgba(0, 255, 0, 1)'; // Solid green
+          } else {
+              // Swipe left
+              console.log('Swiped left');
+              cards[currentCardIndex].style.transform = 'translateX(-100%) rotate(-20deg)';
+              cards[currentCardIndex].style.backgroundColor = 'rgba(255, 0, 0, 1)'; // Solid red
+          }
+
+          setTimeout(() => {
+              cards[currentCardIndex].style.display = 'none';
+              currentCardIndex++;
+              if (currentCardIndex < cards.length) {
+                  showCard(currentCardIndex);
+              }
+          }, 300);
+      } else {
+          // If swipe is not significant, reset card position and color
+          cards[currentCardIndex].style.transform = 'translateX(0) rotate(0)';
+          cards[currentCardIndex].style.backgroundColor = 'rgba(128, 0, 128)'; // Reset color
+      }
+  }
+
+  cards.forEach(card => {
+      card.addEventListener('touchstart', startDrag);
+      card.addEventListener('touchmove', dragCard);
+      card.addEventListener('touchend', endDrag);
+
+      card.addEventListener('mousedown', startDrag);
+      card.addEventListener('mousemove', dragCard);
+      card.addEventListener('mouseup', endDrag);
+      card.addEventListener('mouseleave', endDrag); // In case mouse leaves the card during drag
+  });
+
+  showCard(currentCardIndex);
+});
