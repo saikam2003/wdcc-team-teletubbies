@@ -304,3 +304,17 @@ nav ul li a:hover {
     object-fit: cover; /* Crop the image to fit the dimensions if necessary */
     border-radius: 5px; /* Round corners of images */
 }
+
+/* Apply fixed background to the body or a wrapper element */
+body {
+    background-image: url('universe.jpg'); /* Path to your background image */
+    background-attachment: fixed; /* Keep the background fixed */
+    background-size: cover; /* Scale the background image to cover the entire viewport */
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    font-family: Arial, sans-serif; /* Set a default font */
+    
+
+}
