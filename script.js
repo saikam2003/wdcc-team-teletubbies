@@ -12,7 +12,6 @@
 //   }
 // })
 
-
 var swiper = new Swiper('.mySwiper', {
   effect: 'cards',
   grabCursor: true,
@@ -40,9 +39,16 @@ window.addEventListener('scroll', function () {
 })
 
 function addToCart (itemName) {
-  // Logic to add the item to the cart
-  alert(itemName + ' has been added to the cart!')
-  // You can replace the alert with actual cart functionality
+  // Get existing cart items from local storage
+  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
+
+  // Add the new item to the cart
+  cartItems.push(itemName)
+
+  // Save the updated cart items back to local storage
+  localStorage.setItem('cartItems', JSON.stringify(cartItems))
+
+  // alert(itemName + ' has been added to the cart!')
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -104,14 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const moveX = currentX - startX
     const swipeThreshold = 100 // Minimum distance for a valid swipe
 
+    console.log('Drag ended, moveX:', moveX)
+
     if (Math.abs(moveX) > swipeThreshold) {
       if (moveX > 0) {
         // Swipe right
-        const itemName = cards[currentCardIndex].dataset.name // Get the item name from data attribute
-        cart.push(itemName) // Add item name to cart
-        document.querySelector(
-          '.swipe-direction'
-        ).innerText = `You swiped right! Added ${itemName} to Cart!`
+        const itemName = cards[currentCardIndex].getAttribute('data-name') // Get the item name from data-name
+        addToCart(itemName) // Add to cart function
+        document.querySelector('.swipe-direction').innerText =
+          'You swiped right! ' + itemName + ' has been added to your cart!'
+        console.log('Swiped right')
         cards[currentCardIndex].style.transform =
           'translateX(100%) rotate(20deg)'
         cards[currentCardIndex].style.background = 'rgba(0, 255, 0, 1)' // Solid green
@@ -119,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Swipe left
         document.querySelector('.swipe-direction').innerText =
           "You swiped left! Let's try something else!"
+        console.log('Swiped left')
         cards[currentCardIndex].style.transform =
           'translateX(-100%) rotate(-20deg)'
         cards[currentCardIndex].style.background = 'rgba(255, 0, 0, 1)' // Solid red
@@ -130,9 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentCardIndex < cards.length) {
           showCard(currentCardIndex)
         } else {
-          // Display message when no more cards are available
           document.querySelector('.swipe-direction').innerText =
-            'You have run out of items!'
+            "You've run out of items!"
         }
       }, 300)
     } else {
@@ -155,4 +163,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   showCard(currentCardIndex)
 })
-
