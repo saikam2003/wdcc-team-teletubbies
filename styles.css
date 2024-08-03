@@ -166,6 +166,7 @@ button:hover {
     border-radius: 5px;
     text-align: center;
     width: 80%;
+    margin-left: 200px;
 }
 
 .overlay h1 {
