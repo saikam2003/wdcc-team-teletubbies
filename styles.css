@@ -122,3 +122,146 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
+.main-content {
+    margin-left: 200px; /* Offset by the width of the navbar */
+    padding: 20px;
+}
+
+/* Slogan styling */
+.slogan {
+    margin-bottom: 20px; /* Space below the slogan */
+}
+
+/* Container for features and items */
+.features-and-items {
+    display: flex; /* Align features and items in a row */
+    gap: 20px; /* Space between blocks */
+    flex-direction: column; /* Stack blocks vertically */
+}
+
+/* Feature section styling */
+.features {
+    display: flex; 
+    background-color: #ffffff; /* Light background for features */
+    padding: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.feature-item {
+    margin-bottom: 20px; /* Space between feature items */
+    flex: 1 1 calc(25% - 20px);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Items section styling */
+.items-section {
+    background-color: #fff; /* White background for items */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.top {
+    display: flex; /* Align title and view all horizontally */
+    justify-content: space-between; /* Space between title and view all */
+    margin-bottom: 20px; /* Space below top section */
+}
+
+.title {
+    font-size: 1.5em; /* Larger font for title */
+    text-decoration: none;
+    color: #333; /* Dark color for text */
+}
+
+.view {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+}
+
+/* Styling for items */
+.items {
+    display: flex; /* Align items in a row */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Space between items */
+}
+
+.item {
+    flex: 1 1 calc(25% - 20px); /* Responsive item width, adjust as needed */
+    background-color: #ffffff; /* Light background for items */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Center text */
+}
+.item:hover {
+    background-color: rgba(93, 53, 255, 0.796);
+}
+
+
+.item img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Round corners of images */
+}
+
+.item h3 {
+    margin: 10px 0; /* Margin for heading */
+}
+
+.item p {
+    margin: 5px 0; /* Margin for paragraphs */
+}
+
+
+/* Feature section styling */
+.features {
+    background-color: #f4f4f4; /* Light background for features */
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Individual feature item styling */
+.feature-item {
+    position: relative; /* Allows absolute positioning of the button */
+    padding: 40px;
+    margin-bottom: 0px; /* Space between feature items */
+    background-color: #1eb134; /* White background for feature items */
+    border-radius: 5px;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff; /* Blue background color */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute; /* Position relative to .feature-item */
+     /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.feature-name {
+    padding-bottom: 29px;
+}
+
+
+/* Styling for item images */
+.item img {
+    width: 100%; /* Make images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 230px; /* Set a maximum width */
+    max-height: 180px; /* Set a maximum height */
+    object-fit: cover; /* Crop the image to fit the dimensions if necessary */
+    border-radius: 5px; /* Round corners of images */
+}
