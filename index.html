@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien DoorDash</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -75,12 +77,83 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image1.jpg" />
+                <div class="overlay">
+                    <h1>Alien Burger</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Burger')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image2.jpg" />
+                <div class="overlay">
+                    <h1>Alien Pizza</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Pizza')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image3.jpg" />
+                <div class="overlay">
+                    <h1>Alien Tacos</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Tacos')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image4.jpg" />
+                <div class="overlay">
+                    <h1>Alien Sushi</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Sushi')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image5.jpg" />
+                <div class="overlay">
+                    <h1>Alien Salad</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Salad')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image6.jpg" />
+                <div class="overlay">
+                    <h1>Alien Dessert</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Dessert')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image7.jpg" />
+                <div class="overlay">
+                    <h1>Alien Pasta</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Pasta')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image8.jpg" />
+                <div class="overlay">
+                    <h1>Alien Soup</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Soup')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./media/FoodImages/image9.jpg" />
+                <div class="overlay">
+                    <h1>Alien Smoothie</h1>
+                    <button class="add-to-cart" onclick="addToCart('Alien Smoothie')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
     <footer class="footer">
         &copy; 2024 Alien DoorDash. All rights reserved.
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
