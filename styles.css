@@ -7,10 +7,23 @@
 body {
     font-family: Arial, sans-serif;
 }
+/* styles.css */
 
 .navbar {
-    background-color: #020202;
+    width: 200px; /* Set a fixed width for the navbar */
+    background-color: #000000;
+    padding: 20px;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for smooth effect */
+    position: fixed; /* Make navbar fixed */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Allow scrolling if needed */
 }
+
+.navbar.hidden {
+    opacity: 0; /* Set opacity to 0 */
+    transform: translateX(-100%); /* Move it off-screen */
+}
+
 .heading {
     background-color: #333;
     padding: 1rem;
@@ -132,9 +145,15 @@ button:hover {
     margin-top: auto;
 }
 
-.swiper {
+.swiper-container {
     width: 100%;
-    height: 100vh;
+    height: 400px;
+}
+
+.swiper {
+    width: 400px;
+    height: 500px;
+    margin-top: 400px;
 }
 
 .swiper-slide {
