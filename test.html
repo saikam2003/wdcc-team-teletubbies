@@ -3,168 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>space food</title>
+    <title>Tinder Swiper</title>
     <style>
-        body {
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            display: flex;
         }
 
-        nav {
-            background-color: #ff3333;
-            width: 200px;
-            height: 100vh;
-            padding-top: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin-bottom: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-        }
-
-        .content {
-            margin-left: 220px; /* Space for the navigation bar */
-            padding: 20px;
-            flex-grow: 1;
-        }
-
-        header {
-            background-color: #ff3333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .hero {
-            background-image: url('https://example.com/hero-image.jpg');
-            background-size: cover;
-            background-position: center;
+        /* Container for the swiper */
+        .swiper-container {
+            position: relative;
+            width: 300px;
             height: 400px;
-            color: white;
+            margin: 50px auto;
+            perspective: 1000px;
+        }
+
+        /* Styling for the cards */
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1.5em;
-        }
-
-        .cta-button {
-            background-color: #ff3333;
+            font-size: 24px;
             color: white;
-            padding: 15px 30px;
-            border: none;
-            font-size: 1.2em;
             cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
+            user-select: none;
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
-        .features {
-            display: flex;
-            justify-content: space-around;
-            padding: 50px;
-            background-color: white;
-            margin-top: 20px;
+        /* Hide cards initially */
+        .card:nth-child(2), .card:nth-child(3), .card:nth-child(4), .card:nth-child(5) {
+            opacity: 0;
+            transform: scale(0.95);
         }
 
-        .features .feature {
-            text-align: center;
-            width: 30%;
+        /* Display each card in order */
+        .card.show {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        .features .feature img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-        }
     </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<div class="content">
-    <header id="home">
-        <h1>space food</h1>
-        <p>Your favorite restaurants, delivered to your door</p>
-    </header>
-
-    <div class="hero">
-        <h1>Delicious Delivered</h1>
-        <p>Order from the best restaurants in your area.</p>
-        <a href="#" class="cta-button">Order Now</a>
+    <div class="swiper-container">
+        <div class="card" style="background-color: #FF9AA2;">Card 1</div>
+        <div class="card" style="background-color: #FFB7B2;">Card 2</div>
+        <div class="card" style="background-color: #FFDAC1;">Card 3</div>
+        <div class="card" style="background-color: #E2F0CB;">Card 4</div>
+        <div class="card" style="background-color: #B5EAD7;">Card 5</div>
     </div>
 
-    <div class="features" id="features">
-        <div class="feature">
-            <img src="https://example.com/feature1.png" alt="Feature 1">
-            <h2>Fast Delivery</h2>
-            <p>Get your food delivered fast and fresh.</p>
-        </div>
-        <div class="feature">
-            <img src="https://example.com/feature2.png" alt="Feature 2">
-            <h2>Wide Selection</h2>
-            <p>Choose from hundreds of restaurants in your area.</p>
-        </div>
-        <div class="feature">
-            <img src="https://example.com/feature3.png" alt="Feature 3">
-            <h2>Easy Payment</h2>
-            <p>Pay easily with credit card or PayPal.</p>
-        </div>
-    </div>
-
-    <div class="footer" id="contact">
-        <p>&copy; 2024 DoorDash. All rights reserved.</p>
-    </div>
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    let currentCardIndex = 0;
+    let startX = 0;
+    let isTouching = false;
+
+    function showCard(index) {
+        cards.forEach((card, i) => {
+            card.classList.remove('show');
+            if (i === index) {
+                card.classList.add('show');
+            }
+        });
+    }
+
+    function startDrag(e) {
+        isTouching = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    }
+
+    function dragCard(e) {
+        if (!isTouching) return;
+
+        const moveX = (e.type === 'mousemove' ? e.clientX : e.touches[0].clientX) - startX;
+        cards[currentCardIndex].style.transform = `translateX(${moveX}px) rotate(${moveX * 0.05}deg)`;
+    }
+
+    function endDrag(e) {
+        if (!isTouching) return;
+        isTouching = false;
+
+        const endX = e.type === 'mouseup' ? e.clientX : e.changedTouches[0].clientX;
+        const moveX = endX - startX;
+
+        if (Math.abs(moveX) > 100) {
+            if (moveX > 0) {
+                // Swipe right
+                cards[currentCardIndex].style.transform = 'translateX(100%) rotate(20deg)';
+            } else {
+                // Swipe left
+                cards[currentCardIndex].style.transform = 'translateX(-100%) rotate(-20deg)';
+            }
+
+            setTimeout(() => {
+                cards[currentCardIndex].style.display = 'none';
+                currentCardIndex++;
+                if (currentCardIndex < cards.length) {
+                    showCard(currentCardIndex);
+                }
+            }, 300);
+        } else {
+            // If swipe is not significant, reset card position
+            cards[currentCardIndex].style.transform = 'translateX(0) rotate(0)';
+        }
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('touchstart', startDrag);
+        card.addEventListener('touchmove', dragCard);
+        card.addEventListener('touchend', endDrag);
+
+        card.addEventListener('mousedown', startDrag);
+        card.addEventListener('mousemove', dragCard);
+        card.addEventListener('mouseup', endDrag);
+        card.addEventListener('mouseleave', endDrag); // In case mouse leaves the card during drag
+    });
+
+    showCard(currentCardIndex);
+});
+
+</script>

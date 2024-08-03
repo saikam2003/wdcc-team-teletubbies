@@ -22,18 +22,23 @@ var swiper = new Swiper('.mySwiper', {
 let lastScrollTop = 0 // Variable to track last scroll position
 const navbar = document.querySelector('.navbar') // Get the navbar element
 
-window.addEventListener('scroll', function () {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+// Function to handle scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const maxScroll = 400; // The max scroll point where the navbar fully moves out of view
 
-  if (scrollTop > lastScrollTop) {
-    // Scrolling down
-    navbar.classList.add('hidden') // Add the hidden class to the navbar
-  } else {
-    // Scrolling up
-    navbar.classList.remove('hidden') // Remove the hidden class from the navbar
-  }
-  lastScrollTop = scrollTop // Update the last scroll position
-})
+  // Calculate the horizontal translation based on scroll
+  const translateX = Math.min(scrollTop * 0.5, maxScroll);
+
+  // Apply the calculated transform to the navbar
+  navbar.style.transform = `translateX(-${translateX}px)`;
+
+  // Optionally, adjust the opacity for a fade effect (if needed)
+  const opacity = Math.max(0, 1 - scrollTop / maxScroll);
+  navbar.style.opacity = opacity;
+});
+
 
 
 
