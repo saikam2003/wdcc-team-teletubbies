@@ -85,6 +85,13 @@ body {
     position: fixed;
     justify-content: space-around;
     width: 100%;
+    padding-left: 200px;
+
+}
+
+.welcome {
+    padding-top: -30px;
+    padding-bottom: 30px;
 }
 
 .navbar h1 {
@@ -110,7 +117,8 @@ body {
     color: black;
     font-size: 3rem;
     margin-left: 200px;
-    margin-top: 200px;
+    margin-top: 100px;
+    margin-right: 200px;
 }
 
 .searchbar {
@@ -118,6 +126,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: 200px;
+    margin-bottom: 50px;
 }
 
 .searchbar form {
@@ -352,6 +361,7 @@ nav ul li a:hover {
 /* Slogan styling */
 .slogan {
     margin-bottom: 20px; /* Space below the slogan */
+    position: relative;
 }
 
 /* Container for features and items */
@@ -500,6 +510,40 @@ body {
     margin: 0; /* Remove default body margin */
     padding: 0; /* Remove default body padding */
     font-family: Arial, sans-serif; /* Set a default font */
-    
 
+}
+
+
+.alien img{
+    width: 150px;
+    transform: rotate(-20deg);
+    right: 1040px;
+    top: 70px;
+    /* position: absolute; */
+}
+
+.space img{
+    width: 150px;
+    transform: rotate(20deg);
+    top: 70px;
+    /* position: absolute; */
+}
+
+.rocket img{
+    width: 150px;
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 300px;
+    margin: -100px;
+
+    /* position: absolute; */
+}
+
+.slogan-and-pictures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 150px;
 }
