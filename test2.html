@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipeable Cards</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.swipe-container {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+}
+
+.card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: transform 0.3s, background-color 0.3s;
+    overflow: hidden; /* Ensure content doesn't spill out */
+    background-image: url(universe.jpg);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Fallback color */
+    transition: background-color 0.3s;
+    pointer-events: none; /* Ensure it does not interfere with interactions */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="swipe-container">
+        <div class="card-container">
+            <div class="card" style="background-image: url('universe.jpg');">Card 1</div>
+            <div class="card" style="background-image: url('universe.jpg');">Card 2</div>
+            <div class="card" style="background-image: url('universe.jpg');">Card 3</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    let currentCardIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isTouching = false;
+
+    function showCard(index) {
+        if (index >= 0 && index < cards.length) {
+            cards.forEach((card, i) => {
+                card.classList.remove('show');
+                if (i === index) {
+                    card.classList.add('show');
+                }
+            });
+        }
+    }
+
+    function handleSwipe(direction) {
+        const moveX = direction === 'right' ? 200 : -200; // Adjust swipe distance
+        const fadeColor = direction === 'right' ? 'rgba(0, 255, 0, 0.5)' : 'rgba(255, 0, 0, 0.5)';
+        cards[currentCardIndex].style.transform = `translateX(${moveX}px) rotate(${moveX * 0.05}deg)`;
+
+        // Apply color fade effect
+        cards[currentCardIndex].querySelector('::after').style.backgroundColor = fadeColor;
+
+        setTimeout(() => {
+            cards[currentCardIndex].style.display = 'none';
+            currentCardIndex++;
+            if (currentCardIndex < cards.length) {
+                showCard(currentCardIndex);
+            }
+        }, 300);
+    }
+
+    function startDrag(e) {
+        isTouching = true;
+        startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    }
+
+    function dragCard(e) {
+        if (!isTouching) return;
+
+        currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const moveX = currentX - startX;
+
+        // Apply dragging effect
+        cards[currentCardIndex].style.transform = `translateX(${moveX}px) rotate(${moveX * 0.05}deg)`;
+
+        // Adjust fade color based on direction
+        const swipeDirection = moveX > 0 ? 'right' : 'left';
+        const swipeDistance = Math.min(Math.abs(moveX), 100); // Limit the distance for smoother transition
+        const fadeColor = swipeDirection === 'right' ? `rgba(0, 255, 0, ${swipeDistance / 100})` : `rgba(255, 0, 0, ${Math.abs(swipeDistance / 100)})`;
+        cards[currentCardIndex].querySelector('::after').style.backgroundColor = fadeColor;
+    }
+
+    function endDrag(e) {
+        if (!isTouching) return;
+        isTouching = false;
+
+        const moveX = currentX - startX;
+        const swipeThreshold = 100; // Minimum distance for a valid swipe
+
+        if (Math.abs(moveX) > swipeThreshold) {
+            const swipeDirection = moveX > 0 ? 'right' : 'left';
+            console.log(`Swiped ${swipeDirection}`);
+            handleSwipe(swipeDirection);
+        } else {
+            // Reset card position if swipe is not significant
+            cards[currentCardIndex].style.transform = 'translateX(0) rotate(0)';
+            cards[currentCardIndex].querySelector('::after').style.backgroundColor = ''; // Reset color
+        }
+    }
+
+    cards.forEach(card => {
+        card.addEventListener('touchstart', startDrag);
+        card.addEventListener('touchmove', dragCard);
+        card.addEventListener('touchend', endDrag);
+
+        card.addEventListener('mousedown', startDrag);
+        card.addEventListener('mousemove', dragCard);
+        card.addEventListener('mouseup', endDrag);
+        card.addEventListener('mouseleave', endDrag); // In case mouse leaves the card during drag
+    });
+
+    showCard(currentCardIndex);
+});
+
+
+</script>
