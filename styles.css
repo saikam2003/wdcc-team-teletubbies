@@ -537,6 +537,7 @@ body {
     color: white;
     cursor: pointer;
     user-select: none;
+    object-fit: contain;
     transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
@@ -550,4 +551,16 @@ body {
 .card.show {
     opacity: 1;
     transform: scale(1);
+}
+
+.direction-container {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    padding: 0 40px;
+    font-size: x-large;
 }
