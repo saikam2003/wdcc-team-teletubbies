@@ -66,7 +66,7 @@ body {
     background-color: #020202;
 }
 .heading {
-    background-color: #333;
+    background-color: #ffffff;
     padding: 1rem;
     text-align: center;
     position: fixed;
@@ -78,7 +78,7 @@ body {
     color: white;
     margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #6CC417;
+    color: #a317d2;
 }
 
 .home {
@@ -118,7 +118,7 @@ body {
     height: 52px;
     border-radius: 20px;
     padding-left: 15px;
-    border: 5px solid #6CC417;
+    border: 5px solid #a317d2;
     font-weight: bold;
     font-size: 20px;
     margin-right: 10px;
@@ -131,7 +131,7 @@ body {
     border-radius: 20px;
     height: 55px;
     width: 100px;
-    border: 5px solid #6CC417;
+    border: 5px solid #a317d2;
     font-weight: bold;
     font-size: 20px;
     color: rgb(83, 75, 75);
@@ -291,7 +291,7 @@ button:hover {
 }
 
 .parent-div nav ul li a{
-    color: #6CC417;
+    color: #a317d2;
     font-weight: bold;
 }
 
@@ -436,7 +436,7 @@ nav ul li a:hover {
     position: relative; /* Allows absolute positioning of the button */
     padding: 40px;
     margin-bottom: 0px; /* Space between feature items */
-    background-color: #1eb134; /* White background for feature items */
+    background-color: #a317d2; /* White background for feature items */
     border-radius: 5px;
 }
 
