@@ -86,7 +86,7 @@ body {
     justify-content: space-around;
     width: 100%;
     padding-left: 200px;
-
+    z-index: 10;
 }
 
 .welcome {
@@ -116,9 +116,10 @@ body {
 .home h2 {
     color: black;
     font-size: 3rem;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 100px;
-    margin-right: 200px;
+    margin-right: 100px;
+    padding-left: 40px;
 }
 
 .searchbar {
@@ -512,6 +513,7 @@ body {
     padding: 0; /* Remove default body padding */
     font-family: Arial, sans-serif; /* Set a default font */
 
+}
 
 * {
     margin: 0;
@@ -580,16 +582,19 @@ body {
 .alien img{
     width: 150px;
     transform: rotate(-20deg);
-    right: 1040px;
+    left: 100px;
     top: 70px;
-    /* position: absolute; */
+    position: relative;
+    animation: swing1 1s infinite ease-in-out; 
 }
 
 .space img{
-    width: 150px;
+    width: 170px;
     transform: rotate(20deg);
     top: 70px;
-    /* position: absolute; */
+    position: relative;
+    animation: shake 2.5s infinite; /* Apply the shake animation */
+
 }
 
 .rocket img{
@@ -599,7 +604,8 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 300px;
-    margin: -100px;
+    margin: 180px;
+    margin-left: -110px;
 
     /* position: absolute; */
 }
@@ -609,4 +615,35 @@ body {
     align-items: center;
     justify-content: center;
     padding-left: 150px;
+}
+
+
+@keyframes swing2 {
+    0% { transform: rotate(20deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(20deg); }
+    75% { transform: rotate(25deg); }
+    100% { transform: rotate(20deg); }
+}
+
+@keyframes swing1 {
+    0% { transform: rotate(-20deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(-20deg); }
+    75% { transform: rotate(-25deg); }
+    100% { transform: rotate(-20deg); }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(20deg); }
+    10% { transform: translate(-1px, -2px) rotate(19deg); }
+    20% { transform: translate(-1px, 0px) rotate(21deg); }
+    30% { transform: translate(1px, 2px) rotate(20deg); }
+    40% { transform: translate(1px, -1px) rotate(21deg); }
+    50% { transform: translate(-1px, 2px) rotate(19deg); }
+    60% { transform: translate(-1px, 1px) rotate(20deg); }
+    70% { transform: translate(1px, 1px) rotate(19deg); }
+    80% { transform: translate(-1px, -1px) rotate(21deg); }
+    90% { transform: translate(1px, 2px) rotate(20deg); }
+    100% { transform: translate(1px, -2px) rotate(19deg); }
 }
