@@ -25,10 +25,10 @@ const navbar = document.querySelector('.navbar') // Get the navbar element
 window.addEventListener('scroll', function () {
   const navbar = document.querySelector('.navbar')
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  const maxScroll = 400 // The max scroll point where the navbar fully moves out of view
+  const maxScroll = 580 // The max scroll point where the navbar fully moves out of view
 
   // Calculate the horizontal translation based on scroll
-  const translateX = Math.min(scrollTop * 0.5, maxScroll)
+  const translateX = Math.min(scrollTop * 0.2, maxScroll)
 
   // Apply the calculated transform to the navbar
   navbar.style.transform = `translateX(-${translateX}px)`
