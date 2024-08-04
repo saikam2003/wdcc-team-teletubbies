@@ -101,6 +101,11 @@ a{
     padding-bottom: 30px;
 }
 
+#next {
+    margin: auto;
+    display: flex;
+}
+
 .navbar h1 {
     color: white;
     margin: 0;
@@ -123,6 +128,23 @@ a{
     color: rgb(0, 0, 0);
     font-size: 3rem;
     margin-left: 150px;
+    /* margin-top: 10px; */
+    margin-right: 100px;
+    padding-left: 40px;
+}
+
+.home2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home2 h2 {
+    color: black;
+    font-size: 3rem;
+    margin-left: 100px;
     margin-top: 100px;
     margin-right: 100px;
     padding-left: 40px;
@@ -226,12 +248,13 @@ button:hover {
     margin-top: auto;
 }
 
-.swiper-container {
+/* .swiper-container {
     width: 200%;
     height: 150px;
     margin-top: 200px;
     margin-bottom: 200px;
-}
+} */
+
 
 .swiper {
     width: 400px;
@@ -392,6 +415,8 @@ nav ul li a:hover {
     display: flex; /* Align features and items in a row */
     gap: 20px; /* Space between blocks */
     flex-direction: column; /* Stack blocks vertically */
+    margin-bottom: auto;
+    
 }
 
 /* Feature section styling */
@@ -549,41 +574,43 @@ body {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: Arial, sans-serif;
 }
 
 /* Container for the swiper */
 .swiper-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px; /* Set a maximum width for the container */
-    height: 500px;
-    margin: auto;
-    perspective: 1000px;
+    /* position: relative; */
+    width: 100%; /* Set a maximum width for the container */
+    height: 100%;
+    /* margin: auto; */
+    /* perspective: 1000px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 450px
+    height: 100vh;
+    /* margin-top: 100px */
 }
 
 
 /* Styling for the cards */
 .card {
-    width: 150%;
-    height: 150%;
+    background-position: center;
+    width: 700px;
+    height: 700px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 800px;
-    margin-bottom: 1000px;
+    /* margin-top: 100px; */
+    /* margin-bottom: 20px; */
     font-size: 24px;
     color: white;
     cursor: pointer;
     user-select: none;
-    /* object-fit: contain; */
+    margin-right: 10px;
+    object-fit: contain;
     transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
@@ -591,6 +618,18 @@ body {
 .card:nth-child(2), .card:nth-child(3), .card:nth-child(4), .card:nth-child(5) {
     opacity: 0;
     transform: scale(0.95);
+}
+
+.card h2 {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: to add a semi-transparent background */
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 39px;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
 /* Display each card in order */
@@ -606,7 +645,7 @@ body {
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    margin: 50px;
+    /* margin: 50px; */
     /* padding: 40px; */
     font-size: x-large;
 }
