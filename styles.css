@@ -619,10 +619,9 @@ body {
     transform: rotate(90deg);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-bottom: 300px;
-    margin: 180px;
-    margin-left: -110px;
+    
+    padding-bottom: 100px;
+    
 
     /* position: absolute; */
 }
