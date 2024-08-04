@@ -154,9 +154,21 @@ a{
     color: rgb(0, 0, 0);
     font-size: 3rem;
     margin-left: 170px;
-    margin-top: 130px;
+    margin-top: 1px;
     margin-right: 120px;
     padding-left: 40px;
+}
+
+.message {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 200px;
+    padding-left: 100px;
+    color: rgb(156, 81, 255);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+
 }
 
 .home2 {
