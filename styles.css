@@ -121,8 +121,13 @@ a{
 
 
 .welcome {
+<<<<<<< Updated upstream
     margin-top: 40px;
     padding-bottom: 30px;
+=======
+    padding-top: 100px;
+    padding-left: 10px;
+>>>>>>> Stashed changes
 }
 
 #next {
@@ -151,9 +156,9 @@ a{
 .home h2 {
     color: rgb(0, 0, 0);
     font-size: 3rem;
-    margin-left: 150px;
+    margin-left: 170px;
     /* margin-top: 10px; */
-    margin-right: 100px;
+    margin-right: 120px;
     padding-left: 40px;
 }
 
@@ -725,7 +730,7 @@ body {
 
 /* Title Styling */
 .title1 {
-    font-family: 'Arial', sans-serif; /* Change this to your desired font */
+    font-family: 'Pscifico', sans-serif; /* Change this to your desired font */
     font-size: 2rem; /* Adjust size as needed */
     color: #333; /* Change color as needed */
     margin-left: 350px;
