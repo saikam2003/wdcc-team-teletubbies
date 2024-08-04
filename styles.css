@@ -160,8 +160,8 @@ a{
 }
 
 .home2 {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 300px;
+    /* margin-bottom: 50px; */
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -432,7 +432,7 @@ nav ul li a:hover {
     display: flex; /* Align features and items in a row */
     gap: 20px; /* Space between blocks */
     flex-direction: column; /* Stack blocks vertically */
-    margin-bottom: auto;
+    margin-bottom: 200px;
     
 }
 
@@ -613,8 +613,8 @@ body {
 /* Styling for the cards */
 .card {
     background-position: center;
-    width: 700px;
-    height: 700px;
+    width: 650px;
+    height: 650px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -968,4 +968,9 @@ label {
     background-attachment: fixed; /* Keep the image fixed while scrolling */
     min-height: 100vh; /* Ensure the background covers the full height of the viewport */
     position: relative; /* Ensure the content can be positioned relative to this container */
+}
+
+.divider {
+    border-top: 1px solid #ccc; /* Adjust thickness and color */
+    margin: 20px 0; /* Adjust spacing around the divider */
 }
