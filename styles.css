@@ -215,7 +215,7 @@ button:hover {
 }
 
 .swiper-container {
-    width: 150%;
+    width: 200%;
     height: 150px;
     margin-top: 200px;
     margin-bottom: 200px;
@@ -558,7 +558,7 @@ body {
     color: white;
     cursor: pointer;
     user-select: none;
-    object-fit: contain;
+    /* object-fit: contain; */
     transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
