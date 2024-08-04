@@ -419,7 +419,12 @@ nav ul li a:hover {
 
 .view {
     text-decoration: none;
-    color: #007bff; /* Link color */
+    color: #8616e8; /* Link color */
+}
+
+.view:hover{
+    text-decoration: underline;
+    transition: text-decoration 0.5s;
 }
 
 /* Styling for items */
@@ -437,7 +442,8 @@ nav ul li a:hover {
     text-align: center; /* Center text */
 }
 .item:hover {
-    background-color: rgba(93, 53, 255, 0.796);
+    background-color: rgba(237, 232, 255, 0.796);
+    transition: background-color 0.5s;
 }
 
 
@@ -445,6 +451,7 @@ nav ul li a:hover {
     width: 100%; /* Full width for images */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Round corners of images */
+    
 }
 
 .item h3 {
@@ -507,6 +514,8 @@ nav ul li a:hover {
     max-height: 180px; /* Set a maximum height */
     object-fit: cover; /* Crop the image to fit the dimensions if necessary */
     border-radius: 5px; /* Round corners of images */
+    width: 200px; /* Set the desired width */
+    height: 200px;
 }
 
 /* Apply fixed background to the body or a wrapper element */
