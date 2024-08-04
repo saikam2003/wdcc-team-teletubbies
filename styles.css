@@ -73,18 +73,23 @@ body {
     overflow-y: auto; /* Allow scrolling if needed */
 }
 
+a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+}
 .navbar.hidden {
     opacity: 0; /* Set opacity to 0 */
     transform: translateX(-100%); /* Move it off-screen */
 }
 
 .heading {
-    background-color: #ffffff;
     padding: 1rem;
-    text-align: center;
+    text-align: right;
     position: fixed;
-    justify-content: space-around;
+    color: #000000;
     width: 100%;
+    align-items: center;
     padding-left: 200px;
     z-index: 10;
 }
@@ -615,6 +620,79 @@ body {
     align-items: center;
     justify-content: center;
     padding-left: 150px;
+}
+
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 10px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Optional: background for better visibility */
+}
+
+.location-button {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+.delivery-button {
+    background-color: black;
+    color: white;
+}
+
+.pickup-button {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.notification-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
 }
 
 
