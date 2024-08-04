@@ -114,18 +114,28 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: #ffffff;
     width: 100%;
     margin-right: 200px;
 }
 
 .home h2 {
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 3rem;
     margin-left: 150px;
     margin-top: 100px;
     margin-right: 100px;
     padding-left: 40px;
+}
+
+.background-image::before {
+    content: ''; /* Empty content for the overlay */
+    position: absolute; /* Position absolutely within the background-image container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.155); /* White background with 30% opacity */
+    z-index: 0; /* Ensure overlay is behind the content */
 }
 
 .searchbar {
@@ -441,6 +451,7 @@ nav ul li a:hover {
     padding: 10px;
     border-radius: 5px;
     text-align: center; /* Center text */
+    position: relative;
 }
 .item:hover {
     background-color: rgba(237, 232, 255, 0.796);
@@ -632,6 +643,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-left: 150px;
+    position: relative;
 }
 
 
@@ -874,4 +886,12 @@ label {
 
 .container .navbar ul li img{
     border-radius: 30px;
+
+.background-image {
+    background-image: url('media/FoodImages/universe.jpg'); /* Replace with your background image URL */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: bottom center; /* Position the image at the bottom center */
+    background-attachment: fixed; /* Keep the image fixed while scrolling */
+    min-height: 100vh; /* Ensure the background covers the full height of the viewport */
+    position: relative; /* Ensure the content can be positioned relative to this container */
 }
