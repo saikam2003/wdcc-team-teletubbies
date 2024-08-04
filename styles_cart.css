@@ -254,6 +254,18 @@ label {
     font-weight: bold;
 }
 
+.rocket img{
+    width: 150px;
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    
+    padding-bottom: 100px;
+    
+
+    /* position: absolute; */
+}
+
 input[type="text"] {
     width: 100%;
     padding: 10px;
