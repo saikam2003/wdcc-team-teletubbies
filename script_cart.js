@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('payment-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    alert('Payment successful!');
+    alert('Payment successful! Your order will reach you in 20,000 light years!');
 });
 
 
