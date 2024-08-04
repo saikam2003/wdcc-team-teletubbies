@@ -55,6 +55,15 @@
     font-style: italic;
   }
 
+.navbar {
+    width: 300px; /* Set a fixed width for the navbar */
+    background-color: purple;
+    padding: 20px;
+    transition: opacity 3s 1ease, transform 0.5s ease; /* Add transition for smooth effect */
+    position: fixed; /* Make navbar fixed */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Allow scrolling if needed */
+}
 
 .navbar {
     width: 300px; /* Set a fixed width for the navbar */
@@ -120,9 +129,7 @@ nav ul li a:hover {
     border-radius: 30px;
 }
 
-.navbar ul li img{
-    border-radius: 30px;
-}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -299,23 +306,4 @@ input[type="text"] {
 
 .pay-btn:hover {
     background-color: purple;
-}
-
-.navbar {
-    width: 250px; /* Set a fixed width for the navbar */
-    /* background-color: rgb(154, 89, 184); */
-    background: linear-gradient( 400deg, #7400b8, #6930c3, #a55ece, #d953a6, #fb5aa2);
-    padding: 20px;
-    transition: opacity 3s 1ease, transform 0.5s ease; /* Add transition for smooth effect */
-    position: fixed; /* Make navbar fixed */
-    height: 100%; /* Full height */
-    overflow-y: auto; /* Allow scrolling if needed */
-    text-align: center;
-}
-
-.navbar h1 {
-    color: white;
-    margin: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #a317d2;
 }
