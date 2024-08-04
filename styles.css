@@ -71,6 +71,7 @@ body {
     position: fixed; /* Make navbar fixed */
     height: 100%; /* Full height */
     overflow-y: auto; /* Allow scrolling if needed */
+    text-align: center;
 }
 
 a{
@@ -883,6 +884,8 @@ label {
     background-color: purple;
 }
 
+.container .navbar ul li img{
+    border-radius: 30px;
 
 .background-image {
     /* background-image: url('media/FoodImages/universe.jpg'); */
