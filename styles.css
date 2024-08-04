@@ -661,7 +661,7 @@ button {
 }
 
 .delivery-button {
-    background-color: black;
+    background-color: #a317d2;
     color: white;
 }
 
@@ -689,7 +689,7 @@ button {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: red;
+    background-color: #a317d2;
     border-radius: 50%;
     cursor: pointer;
     color: white;
