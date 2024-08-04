@@ -167,7 +167,9 @@ a{
     padding-left: 100px;
     color: rgb(156, 81, 255);
     font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    z-index: 10;
+    margin-bottom: 50px;
 
 }
 
@@ -982,7 +984,8 @@ label {
     position: relative; /* Ensure the content can be positioned relative to this container */
 }
 
-.divider {
-    border-top: 1px solid #ccc; /* Adjust thickness and color */
-    margin: 20px 0; /* Adjust spacing around the divider */
+.dest {
+    height: 100px;
+    width: 100px;
+    margin-left: 300px;
 }
