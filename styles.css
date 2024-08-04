@@ -157,7 +157,7 @@ a{
     color: rgb(0, 0, 0);
     font-size: 3rem;
     margin-left: 170px;
-    /* margin-top: 10px; */
+    margin-top: 130px;
     margin-right: 120px;
     padding-left: 40px;
 }
@@ -179,16 +179,7 @@ a{
     padding-left: 40px;
 }
 
-.background-image::before {
-    content: ''; /* Empty content for the overlay */
-    position: absolute; /* Position absolutely within the background-image container */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.155); /* White background with 30% opacity */
-    z-index: 0; /* Ensure overlay is behind the content */
-}
+
 
 .searchbar {
     display: flex;
