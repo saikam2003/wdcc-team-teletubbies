@@ -297,3 +297,7 @@ input[type="text"] {
 .pay-btn:hover {
     background-color: purple;
 }
+
+.container .navbar ul li img{
+    border-radius: 30px;
+}
