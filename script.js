@@ -163,3 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   showCard(currentCardIndex)
 })
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('cart-btn').addEventListener('click', function() {
+      window.location.href = 'cart.html';
+  });
+});
